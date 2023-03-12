@@ -13,12 +13,12 @@ class CryptoConverter:
             raise APIExeption(f'Вы хотите конвертировать одинаковые валюты - "{base}"')
 
         try:
-            base_ticker = keys[base]
+            base_ticker = keys[base.lower()]
         except KeyError:
             raise APIExeption(f'Проверьте правильность ввода валюты - "{base}"')
 
         try:
-            quote_ticker = keys[quote]
+            quote_ticker = keys[quote.lower()]
         except KeyError:
             raise APIExeption(f'Проверьте правильность ввода валюты - "{quote}"')
 
